@@ -3,34 +3,25 @@ import "./WorkExperience.css";
 import { WORK_EXPERIENCE } from "../../util/data";
 import ExperienceCard from "./ExperienceCard/ExperienceCard";
 
-import Slider from "react-slick";
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
+import { Swiper, SwiperSlide } from "swiper/react"; // Import Swiper and SwiperSlide
+import { Navigation, Pagination } from "swiper/modules"; // Import necessary modules
 
 const WorkExperience = () => {
-  const sliderRef = useRef();
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 2,
-    slidesToScroll: 1,
-    arrows: false,
-    responsive: [
-      {
-        breakpoint: 768, // Mobile
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
+  const swiperRef = useRef(null); // Create a reference for the Swiper instance
 
+  // Function to go to the next slide
   const slideRight = () => {
-    sliderRef.current.slickNext();
+    swiperRef.current.swiper.slideNext();
   };
 
+  // Function to go to the previous slide
   const slideLeft = () => {
-    sliderRef.current.slickPrev();
+    swiperRef.current.swiper.slidePrev();
   };
 
   return (
@@ -38,19 +29,32 @@ const WorkExperience = () => {
       <h5>Work Experience</h5>
 
       <div className="experience-content">
+        {/* Custom right arrow */}
         <div className="arrow-right no-select" onClick={slideRight}>
           <span className="material-symbols-outlined">chevron_right</span>
         </div>
 
+        {/* Custom left arrow */}
         <div className="arrow-left no-select" onClick={slideLeft}>
           <span className="material-symbols-outlined">chevron_left</span>
         </div>
 
-        <Slider ref={sliderRef} {...settings}>
+        <Swiper
+          ref={swiperRef} // Attach the reference to the Swiper component
+          spaceBetween={50}
+          slidesPerView={2}
+          slidesPerGroup={1}
+          loop={true}
+          navigation={false} // Disable default navigation arrows
+          pagination={false}
+          modules={[Navigation, Pagination]} // Use modules directly here
+        >
           {WORK_EXPERIENCE.map((item) => (
-            <ExperienceCard key={item.id} details={item} />
+            <SwiperSlide key={item.id}>
+              <ExperienceCard details={item} />
+            </SwiperSlide>
           ))}
-        </Slider>
+        </Swiper>
       </div>
     </section>
   );

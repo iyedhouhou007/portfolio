@@ -1,18 +1,27 @@
 import React, { useState } from "react";
 import "./NavBar.css";
-import "@fontsource/material-symbols-outlined";
 import MobileNav from "./MobileNav/MobileNav";
+import Modal from "../Modal/Modal"; // Import the Modal component
 
 const NavBar = () => {
   const [openMenu, setOpenMenu] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false); // State for modal visibility
 
   const toggleMenu = () => {
     setOpenMenu(!openMenu);
   };
 
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen); // Toggle modal visibility
+  };
+
   return (
     <>
-      <MobileNav isOpen={openMenu} toggleMenu={toggleMenu} />
+      <MobileNav
+        isOpen={openMenu}
+        toggleMenu={toggleMenu}
+        toggleModal={toggleModal}
+      />
 
       <nav className="nav-wrapper">
         <div className="nav-container">
@@ -38,7 +47,10 @@ const NavBar = () => {
                 Contact Me
               </a>
             </li>
-            <button className="contact-btn">Hire Me</button>
+            <button className="contact-btn" onClick={toggleModal}>
+              Hire Me
+            </button>{" "}
+            {/* Open the modal */}
           </ul>
 
           <button className="menu-btn" onClick={toggleMenu}>
@@ -48,6 +60,9 @@ const NavBar = () => {
           </button>
         </div>
       </nav>
+
+      {/* Modal Component */}
+      <Modal isOpen={isModalOpen} closeModal={toggleModal} />
     </>
   );
 };

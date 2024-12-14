@@ -22,10 +22,8 @@ const Skills = () => {
               key={item.title}
               iconUrl={item.icon}
               title={item.title}
-              isActive={setSelectedSkill.title === item.title}
-              onClick={() => {
-                handelSelectedSkill(item);
-              }}
+              isActive={selectedSkill.title === item.title}
+              onClick={() => handelSelectedSkill(item)}
             />
           ))}
         </div>

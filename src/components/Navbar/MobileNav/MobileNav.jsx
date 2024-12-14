@@ -1,7 +1,7 @@
 import React from "react";
 import "./MobileNav.css";
 
-const MobileNav = ({ isOpen, toggleMenu }) => {
+const MobileNav = ({ isOpen, toggleMenu, toggleModal }) => {
   return (
     <>
       <div
@@ -9,7 +9,7 @@ const MobileNav = ({ isOpen, toggleMenu }) => {
         onClick={toggleMenu}
       >
         <div className="mobile-menu-container">
-          <img src="./assets/images/logo.svg" alt="" />
+          <img src="./assets/images/logo.svg" alt="Logo" />
 
           <ul>
             <li>
@@ -32,7 +32,10 @@ const MobileNav = ({ isOpen, toggleMenu }) => {
                 Contact Me
               </a>
             </li>
-            <button className="contact-btn">Hire Me</button>
+            <button className="contact-btn" onClick={toggleModal}>
+              Hire Me
+            </button>{" "}
+            {/* Open the modal */}
           </ul>
         </div>
       </div>
