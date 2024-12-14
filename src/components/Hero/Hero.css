@@ -1,0 +1,237 @@
+/* Hero.css */
+
+.hero-container {
+  display: flex;
+  flex-direction: row; /* Default to row layout */
+  align-items: center; /* Vertically center the items */
+  justify-content: center; /* Horizontally center the items */
+  position: relative;
+  padding: 2rem;
+  width: 100%;
+  height: calc(100vh - 80px); /* Subtract navbar height (adjust if necessary) */
+  max-width: 100%;
+}
+/* Background Blur Effects */
+.hero-container::after,
+.hero-container::before {
+  content: " ";
+  width: 20rem;
+  height: 20rem;
+  border-radius: 50%;
+  background: #7c66e3;
+  position: absolute;
+  z-index: -1;
+  filter: blur(150px); /* Adjusted blur for small screens */
+}
+
+.hero-container::after {
+  top: -2rem;
+  left: -3rem;
+}
+
+.hero-container::before {
+  bottom: 1rem;
+  right: 0rem;
+}
+
+/* Hero Content */
+.hero-content {
+  flex: 1;
+  text-align: left; /* Align text left for larger screens */
+  margin-bottom: 2rem;
+}
+
+.hero-content h2 {
+  font-size: 2.4rem; /* Default font size */
+  font-weight: 550;
+  line-height: 3.2rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  width: 90%;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.8rem;
+}
+
+/* Hero Image Section */
+.hero-img {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.hero-img > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.hero-img > div > img {
+  width: 15rem; /* Adjusted image size */
+  height: auto;
+  transition: all 0.3s ease;
+}
+
+.personal-img {
+  height: auto;
+  width: 100%;
+  max-width: 12rem;
+  border-radius: 1rem;
+}
+
+/* Tech Image Container */
+.tech-images-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 100%;
+  margin-top: 1rem;
+}
+
+.tech-image {
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 0.65rem;
+  border: 1.5px solid #6852ba;
+}
+
+.tech-image img {
+  width: 3rem; /* Adjust image size */
+  height: auto;
+  transition: all 0.3s ease;
+}
+
+/* Hover Effect for Images */
+.hero-img > div > img:hover,
+.tech-image img:hover {
+  transform: translateY(-0.5rem);
+}
+
+/* Media Query for Screens Under 768px */
+@media (max-width: 768px) {
+  .hero-container {
+    flex-direction: column; /* Switch to column for smaller screens */
+    padding: 1.5rem; /* Reduce padding */
+  }
+
+  .hero-content h2 {
+    font-size: 2.8rem;
+    line-height: 3.5rem;
+  }
+
+  .hero-content p {
+    font-size: 0.9rem;
+    line-height: 1.6rem;
+    width: 85%;
+  }
+
+  .hero-img {
+    margin-top: 1rem;
+  }
+
+  .hero-img > div > img {
+    width: 20rem; /* Adjust image size */
+  }
+
+  .tech-image {
+    width: 4rem; /* Adjust tech images */
+    height: 4rem;
+  }
+
+  .tech-image img {
+    width: 2.8rem; /* Adjust image size */
+  }
+}
+
+/* Media Query for Screens Under 425px */
+@media (max-width: 425px) {
+  .hero-container {
+    padding: 1rem; /* Reduced padding for smaller screens */
+  }
+
+  .hero-content {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-content h2 {
+    font-size: 2rem; /* Smaller font size */
+    line-height: 2.5rem;
+  }
+
+  .hero-content p {
+    font-size: 0.9rem; /* Smaller font size */
+    line-height: 1.4rem;
+    width: 90%;
+    margin: 0 auto; /* Center the paragraph */
+  }
+
+  .hero-img {
+    margin-top: 1rem; /* Adjust image section margin */
+  }
+
+  .hero-img > div > img {
+    width: 18rem; /* Smaller images for small screens */
+    height: auto;
+  }
+
+  .tech-images-container {
+    gap: 1rem; /* Reduce gap between tech images */
+  }
+
+  .tech-image {
+    width: 3rem; /* Smaller containers */
+    height: 3rem;
+  }
+
+  .tech-image img {
+    width: 2.5rem; /* Further reduce image size */
+    height: auto;
+  }
+
+  .tech-image img:hover {
+    transform: translateY(-0.3rem); /* Smaller hover effect */
+  }
+}
+
+/* Media Query for Extra Small Screens Under 375px */
+@media (max-width: 375px) {
+  .tech-image {
+    width: 2.5rem; /* Even smaller containers */
+    height: 2.5rem;
+  }
+
+  .tech-image img {
+    width: 2rem; /* Further reduce the size of images */
+    height: auto;
+  }
+
+  .hero-content h2 {
+    font-size: 1.8rem; /* Smaller font size */
+    line-height: 2.3rem;
+  }
+
+  .hero-content p {
+    font-size: 0.8rem; /* Even smaller text */
+    line-height: 1.3rem;
+  }
+
+  .hero-img > div > img {
+    width: 16rem; /* Smaller image size */
+  }
+}

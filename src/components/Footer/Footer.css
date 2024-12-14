@@ -1,0 +1,39 @@
+.footer {
+  padding: 2rem;
+  background-color: #130f2a;
+  color: #fff;
+  text-align: center;
+  border-top: 1.5px solid #6751b9;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer a {
+  color: #a892fe;
+  text-decoration: none;
+  margin: 0 0.5rem;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer .social-links a,
+.footer .quick-links a {
+  display: inline-block;
+  margin: 0.5rem;
+}
+
+.footer p {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+.footer .legal-links a {
+  display: block;
+  margin: 0.5rem 0;
+  font-size: 0.8rem;
+}

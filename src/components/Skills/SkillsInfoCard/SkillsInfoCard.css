@@ -1,0 +1,121 @@
+/* SkillsInfoCard.css */
+
+/* Skills Info Card */
+.skills-info-card {
+  min-height: 23rem;
+  background: rgba(22, 17, 47, 0.398);
+  border: 1.5px solid #6751b9;
+  border-radius: 0.65rem;
+  backdrop-filter: blur(1rem);
+}
+
+/* Card Heading */
+.skills-info-card h6 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 0.8rem 2rem;
+  background: linear-gradient(180deg, #ac96ff 0%, #7c5fe6 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-bottom: 1.5px solid #6751b9;
+}
+
+/* Skills Content Container */
+.skills-info-content {
+  padding: 2rem;
+}
+
+/* Skill Info Section */
+.skill-info {
+  display: flex;
+  justify-content: space-between; /* Align skill name and percentage */
+  align-items: center;
+}
+
+.skill-info p {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.skill-info .percentage {
+  color: #dd8cfa; /* Matches the purple color in your theme */
+}
+
+/* Progress Bar Background */
+.skill-progress-bg {
+  background: #382e68; /* Light gray for the background */
+  height: 0.5rem;
+  margin: 1rem 0;
+  border-radius: 0.5rem;
+  overflow: hidden; /* Ensures progress stays within bounds */
+  width: 100%; /* Full width */
+}
+
+/* Progress Bar */
+.skill-progress {
+  width: 0%;
+  height: 0.5rem;
+  background: linear-gradient(90deg, #ac96ff -50%, #7c5fe6 50%);
+  border-radius: 0.5rem; /* Match background rounding */
+  transition: all 0.3s ease-in-out; /* Smooth width animation */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .skills-info-card {
+    padding: 1rem; /* Adjust padding for smaller screens */
+  }
+
+  .skills-info-card h6 {
+    font-size: 1.1rem; /* Slightly smaller heading */
+  }
+
+  .skill-info p {
+    font-size: 0.9rem; /* Adjust font size for skill name */
+  }
+
+  .percentage {
+    font-size: 0.9rem; /* Adjust font size for percentage */
+  }
+
+  .skill-progress-bg {
+    height: 6px; /* Smaller progress bar height */
+  }
+}
+
+@media (max-width: 425px) {
+  .skills-info-card {
+    padding: 0.8rem; /* Reduce padding for smaller screens */
+  }
+
+  .skills-info-card h6 {
+    font-size: 1rem; /* Smaller heading for compact spaces */
+  }
+
+  .skill-info p {
+    font-size: 0.85rem;
+  }
+
+  .percentage {
+    font-size: 0.85rem;
+  }
+
+  .skill-progress-bg {
+    height: 5px; /* Compact progress bar height */
+  }
+}
+
+@media (max-width: 1025px) {
+  .skills-info-card h6 {
+    font-size: 1.1rem;
+  }
+
+  .skill-info p {
+    font-size: 0.9rem;
+  }
+
+  .skills-info-content {
+    padding: 1.5rem;
+  }
+}
