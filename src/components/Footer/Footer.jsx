@@ -9,21 +9,21 @@ const Footer = () => {
 
         <div className="social-links">
           <a
-            href="https://www.facebook.com/"
+            href="https://www.facebook.com/iyedhouho/"
             target="_blank"
             rel="noopener noreferrer"
           >
             Facebook
           </a>
           <a
-            href="https://www.linkedin.com/"
+            href="https://www.linkedin.com/in/mohamed-iyad-abdelhadi-houhou-816252233/"
             target="_blank"
             rel="noopener noreferrer"
           >
             LinkedIn
           </a>
           <a
-            href="https://github.com/"
+            href="https://github.com/iyedhouhou007"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -32,9 +32,9 @@ const Footer = () => {
         </div>
 
         <div className="quick-links">
-          <a href="#about">About</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
+          <a href="#skills">Skills</a>
+          <a href="#work-experience">Work Experience</a>
+          <a href="#contact-me">Contact</a>
         </div>
 
         <div className="contact-info">
